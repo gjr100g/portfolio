@@ -8,21 +8,20 @@
     <style>
         *{box-sizing: border-box;margin: 0;padding: 0;}
         html,body{width: 100%; height: 100%;}
+        body::-webkit-scrollbar{display: none;}
         a{color: #222;}
 
-        #scroll-container{width: 100%;height: 500%;}
+        .scroll{width: 100%; height: 100%;}
 
-        .main{width: 100%;height: 20%; background-color: beige;}
+        .main{background-color: beige;}
 
-        .portfolio{width: 100%;height: 20%;position: relative;}
-        .portfolio1{background-color: rgb(164, 255, 169)}
-        .portfolio2{background-color: rgb(160, 225, 255)}
+        .portfolio{position: relative; background-color: rgb(226, 226, 226);}
 
-
-        .portfolio_text{width: 450px;height: 100%;background-color: white;top: 0;padding-left: 15px;
+        /* 텍스트 */
+        .portfolio_text{width: 450px;height: 100%;background-color: white;top: 0;padding-left: 20px;
         position: absolute;}
-        .text_left{left: 80px;}
-        .text_rihgt{right: 80px;}
+        .text_left{left: 110px;}
+        .text_rihgt{right: 110px;}
             .portfolio_text hr{width: 9px;height: 150px;background-color: #62ab00;border: none;margin-left: 30px;}
             .portfolio_text h1{font-size: 80px;}
             .portfolio_text h3{font-size: 23px;font-weight: normal;margin: 5px 0;}
@@ -37,34 +36,130 @@
             .button a:nth-of-type(1) span{color: white;background-color: #62ab00;}
             .button a{margin-right: 7px;}
 
-        .portfolio_photo{width: 1040px;height: 650px;position: absolute;top: 15%;background-color: violet;
-        border-radius: 10px 50px 10px 50px;overflow: hidden;cursor: pointer;}
-        .photo_rihgt{right: 80px;}
-        .photo_left{left: 80px;}
+        /* 사진 */
+        .portfolio_photo{width: 1040px;height: 650px;position: absolute;top: 15%;
+        border-radius: 10px 50px 10px 50px;overflow: hidden;cursor: pointer;box-shadow: ;}
+        .photo_rihgt{right: 110px;}
+        .photo_left{left: 110px;}
             .portfolio_photo img{width: 100%;}
         
+
+
+        /* 모바일 */
+        .mobile{position: absolute; z-index: 5;top: 300px;}
+            .mobile_left{left: 1020px;}
+            .mobile_rihgt{right: 1020px;}
+            .mobile img{width: 230px;}
+        .mobile_photo{position: relative;width: 230px;height: 457px;}
+            .mobile_photo a{position: absolute;top: 0;left: 0; z-index: 10;width: 100%;}
+            .mobile_photo .img2{position: absolute;top: 0;left: 0; margin: 58px 0 0 19px;width: 192px;
+            height: 80%;overflow: hidden;}
+                .mobile_photo .img2 img{width: 100%;}
 
     </style>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script>
+
+        window.addEventListener("wheel", function (e) {
+            e.preventDefault();
+        }, { passive: false });
+
+
+        var mHtml = $("html");
+        var page = 1;
+
+
+        mHtml.animate({ scrollTop: 0 }, 10);
+
+
+        $(window).on("wheel", function (e) {
+            if (mHtml.is(":animated")) return;
+            if (e.originalEvent.deltaY > 0) {
+                if (page == 6) return;
+                page++;
+            } else if (e.originalEvent.deltaY < 0) {
+                if (page == 1) return;
+                page--;
+            }
+            var posTop = (page - 1) * $(window).height();
+            mHtml.animate({ scrollTop: posTop },500);
+        })
+
+
+
+
+
         // 마우스오버 시 스크롤
-        $(function(){
-            $('.portfolio_photo').mouseover(function(){
-                $('.portfolio_photo img').stop().animate({'marginTop':'-2243.69px'},5000);
+        $(function () {
+            // 포트폴리오 1 pc
+            $('.portfolio1 .portfolio_photo').mouseover(function () {
+                $('.portfolio1 .portfolio_photo img').stop().animate({ 'marginTop': '-2243.69px' }, 5000);
             });
-            $('.portfolio_photo').mouseout(function(){
-                $('.portfolio_photo img').stop().animate({'marginTop':'0px'},2000);
+            $('.portfolio1 .portfolio_photo').mouseout(function () {
+                $('.portfolio1 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
+            });
+
+            // 포트폴리오 2 pc
+            $('.portfolio2 .portfolio_photo').mouseover(function () {
+                $('.portfolio2 .portfolio_photo img').stop().animate({ 'marginTop': '-1827.83px' }, 5000);
+            });
+            $('.portfolio2 .portfolio_photo').mouseout(function () {
+                $('.portfolio2 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
+            });
+                    // 포트폴리오 2 모바일
+                    $('.portfolio2 .mobile').mouseover(function () {
+                        $('.portfolio2 .img2 img').stop().animate({ 'marginTop': '-1780px' }, 5000);
+                    });
+                    $('.portfolio2 .mobile').mouseout(function () {
+                        $('.portfolio2 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
+                    });
+
+            // 포트폴리오 3 pc
+            $('.portfolio3 .portfolio_photo').mouseover(function () {
+                $('.portfolio3 .portfolio_photo img').stop().animate({ 'marginTop': '-2087.84px' }, 5000);
+            });
+            $('.portfolio3 .portfolio_photo').mouseout(function () {
+                $('.portfolio3 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
+            });
+                    // 포트폴리오 3 모바일
+                    $('.portfolio3 .mobile').mouseover(function () {
+                        $('.portfolio3 .img2 img').stop().animate({ 'marginTop': '-2144px' }, 5000);
+                    });
+                    $('.portfolio3 .mobile').mouseout(function () {
+                        $('.portfolio3 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
+                    });
+
+            // 포트폴리오 4 pc
+            $('.portfolio4 .portfolio_photo').mouseover(function () {
+                $('.portfolio4 .portfolio_photo img').stop().animate({ 'marginTop': '-2157.64px' }, 5000);
+            });
+            $('.portfolio4 .portfolio_photo').mouseout(function () {
+                $('.portfolio4 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
+            });
+                    // 포트폴리오 4 모바일
+                    $('.portfolio4 .mobile').mouseover(function () {
+                        $('.portfolio4 .img2 img').stop().animate({ 'marginTop': '-2394px' }, 5000);
+                    });
+                    $('.portfolio4 .mobile').mouseout(function () {
+                        $('.portfolio4 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
+                    });
+
+            // 포트폴리오 5 pc
+            $('.portfolio5 .portfolio_photo').mouseover(function () {
+                $('.portfolio5 .portfolio_photo img').stop().animate({ 'marginTop': '-2897.52px' }, 5000);
+            });
+            $('.portfolio5 .portfolio_photo').mouseout(function () {
+                $('.portfolio5 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
             });
         });
     </script>
 </head>
 <body>
-    <div id="scroll-container">
-        <section class="main">
+        <section class="main scroll">
             <canvas></canvas>
         </section>
         <!-- 포트폴리오1 -->
-        <section class="portfolio portfolio1">
+        <section class="portfolio portfolio1 scroll">
             <div class="portfolio_text text_left">
                 <hr>
                 <h1>01</h1>
@@ -94,17 +189,19 @@
                 </div>
             </div>
             <div class="portfolio_photo photo_rihgt">
-                <img src="img/bookstore.jpeg" alt="">
+                <a href="https://gjr100g.github.io/bookstore/">
+                    <img src="img/pc/bookstore.jpeg" alt="">
+                </a>
             </div>
         </section>
 
         <!-- 포트폴리오2 -->
-        <section class="portfolio portfolio2">
+        <section class="portfolio portfolio2 scroll">
             <div class="portfolio_text text_rihgt">
                 <hr>
-                <h1>01</h1>
-                <h3>교보문구</h3>
-                <h2>Kyobo</h2>
+                <h1>02</h1>
+                <h3>진에어</h3>
+                <h2>Jinair</h2>
                 <h3>Color</h3>
                 <div class="color">
                     <span></span>
@@ -123,15 +220,159 @@
                     편리함을 제공하였습니다.
                 </p>
                 <div class="button">
-                    <a href="https://gjr100g.github.io/bookstore/"><span>main</span></a>
-                    <a href="https://gjr100g.github.io/bookstore/sub1.html"><span>sub</span></a>
+                    <a href="https://gjr100g.github.io/JINAIR/"><span>main</span></a>
+                    <a href="https://gjr100g.github.io/JINAIR/sub1.html"><span>sub</span></a>
                     
                 </div>
             </div>
             <div class="portfolio_photo photo_left">
-                <img src="img/bookstore.jpeg" alt="">
+                <a href="https://gjr100g.github.io/JINAIR/">
+                    <img src="img/pc/jinair.jpeg" alt="">
+                </a>
+            </div>
+            <div class="mobile mobile_left">
+                <div class="mobile_photo">
+                    <a href="https://gjr100g.github.io/JINAIR/" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                        <img src="img/mobile/mobile.png" alt="">
+                    </a>
+                    <div class="img2">
+                        <img src="img/mobile/jinair-mobile.jpeg" alt="">
+                    </div>
+                </div>
             </div>
         </section>
-    </div>
+
+        <!-- 포트폴리오3 -->
+        <section class="portfolio portfolio3 scroll">
+            <div class="portfolio_text text_left">
+                <hr>
+                <h1>03</h1>
+                <h3>디즈니랜드</h3>
+                <h2>Disneyland</h2>
+                <h3>Color</h3>
+                <div class="color">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>
+                    카카오 도서 오픈 Api를 사용하여 도서 정보를<br>
+                    불러와 만든 교보문고 웹페이지 입니다.
+                    <br><br>
+                    도서 사이트의 분위기에 맞는 흰색 바탕에<br>
+                    한색계열의 포인트 컬러를 이용해 차분하고 안정된<br>
+                    페이지를 제작하였습니다.
+                    <br><br>
+                    J-query와 JAVA Script를 이용하여 동적 효과와<br>
+                    편리함을 제공하였습니다.
+                </p>
+                <div class="button">
+                    <a href="https://gjr100g.github.io/disneyland/index.html"><span>main</span></a>
+                    <a href="https://gjr100g.github.io/disneyland/sub1.html"><span>sub1</span></a>
+                    <a href="https://gjr100g.github.io/disneyland/sub2.html"><span>sub2</span></a>
+                </div>
+            </div>
+            <div class="portfolio_photo photo_rihgt">
+                <a href="https://gjr100g.github.io/disneyland/index.html">
+                    <img src="img/pc/disneyland.jpeg" alt="">
+                </a>
+            </div>
+            <div class="mobile mobile_rihgt">
+                <div class="mobile_photo">
+                    <a href="https://gjr100g.github.io/disneyland/index.html" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                        <img src="img/mobile/mobile.png" alt="">
+                    </a>
+                    <div class="img2">
+                        <img src="img/mobile/disneyland-mobile.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 포트폴리오4 -->
+        <section class="portfolio portfolio4 scroll">
+            <div class="portfolio_text text_rihgt">
+                <hr>
+                <h1>04</h1>
+                <h3>멘체스터유나이티드</h3>
+                <h2>Manchester-united</h2>
+                <h3>Color</h3>
+                <div class="color">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>
+                    카카오 도서 오픈 Api를 사용하여 도서 정보를<br>
+                    불러와 만든 교보문고 웹페이지 입니다.
+                    <br><br>
+                    도서 사이트의 분위기에 맞는 흰색 바탕에<br>
+                    한색계열의 포인트 컬러를 이용해 차분하고 안정된<br>
+                    페이지를 제작하였습니다.
+                    <br><br>
+                    J-query와 JAVA Script를 이용하여 동적 효과와<br>
+                    편리함을 제공하였습니다.
+                </p>
+                <div class="button">
+                    <a href="https://gjr100g.github.io/manchester-united/"><span>main</span></a>
+                    <a href="https://gjr100g.github.io/manchester-united/sub1.html"><span>sub1</span></a>
+                    <a href="https://gjr100g.github.io/manchester-united/sub2.html"><span>sub2</span></a>
+                    
+                </div>
+            </div>
+            <div class="portfolio_photo photo_left">
+                <a href="https://gjr100g.github.io/manchester-united/">
+                    <img src="img/pc/manchester-united.jpeg" alt="">
+                </a>
+            </div>
+            <div class="mobile mobile_left">
+                <div class="mobile_photo">
+                    <a href="https://gjr100g.github.io/manchester-united/" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                        <img src="img/mobile/mobile.png" alt="">
+                    </a>
+                    <div class="img2">
+                        <img src="img/mobile/manchester-united-mobile.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 포트폴리오5 -->
+        <section class="portfolio portfolio5 scroll">
+            <div class="portfolio_text text_left">
+                <hr>
+                <h1>05</h1>
+                <h3>플로트</h3>
+                <h2>FLOT</h2>
+                <h3>Color</h3>
+                <div class="color">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>
+                    카카오 도서 오픈 Api를 사용하여 도서 정보를<br>
+                    불러와 만든 교보문고 웹페이지 입니다.
+                    <br><br>
+                    도서 사이트의 분위기에 맞는 흰색 바탕에<br>
+                    한색계열의 포인트 컬러를 이용해 차분하고 안정된<br>
+                    페이지를 제작하였습니다.
+                    <br><br>
+                    J-query와 JAVA Script를 이용하여 동적 효과와<br>
+                    편리함을 제공하였습니다.
+                </p>
+                <div class="button">
+                    <a href="https://gjr100g.github.io/dog-html/"><span>main</span></a>
+                    <a href="https://gjr100g.github.io/dog-html/sub.html"><span>sub</span></a>
+                    
+                </div>
+            </div>
+            <div class="portfolio_photo photo_rihgt">
+                <a href="https://gjr100g.github.io/dog-html/">
+                    <img src="img/pc/dog.jpeg" alt="">
+                </a>
+            </div>
+
+        </section>
 </body>
 </html>
