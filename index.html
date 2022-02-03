@@ -5,157 +5,146 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{box-sizing: border-box;margin: 0;padding: 0;}
-        html,body{width: 100%; height: 100%;}
-        body::-webkit-scrollbar{display: none;}
-        a{color: #222;}
-
-        .scroll{width: 100%; height: 100%;}
-
-        .main{background-color: beige;}
-
-        .portfolio{position: relative; background-color: rgb(226, 226, 226);}
-
-        /* 텍스트 */
-        .portfolio_text{width: 450px;height: 100%;background-color: white;top: 0;padding-left: 20px;
-        position: absolute;}
-        .text_left{left: 110px;}
-        .text_rihgt{right: 110px;}
-            .portfolio_text hr{width: 9px;height: 150px;background-color: #62ab00;border: none;margin-left: 30px;}
-            .portfolio_text h1{font-size: 80px;}
-            .portfolio_text h3{font-size: 23px;font-weight: normal;margin: 5px 0;}
-            .portfolio_text h2{font-size: 30px;margin-bottom: 20px;}
-            .color{width: auto;height: auto;margin: 15px 0;}
-            .color span{width: 25px;height: 25px;border-radius: 25px;background-color: #62ab00;
-            display: inline-block;margin-right: 3px;}
-            .portfolio_text p{font-size: 14px;line-height: 23px;}
-            .button{width: auto;height: auto;margin-top: 50px;}
-            .button span{width: 100px;height: 40px;border: 2px solid #62ab00;display: inline-block;
-            text-align: center;line-height: 37px;font-weight: bold;font-size: 15px;border-radius: 5px;}
-            .button a:nth-of-type(1) span{color: white;background-color: #62ab00;}
-            .button a{margin-right: 7px;}
-
-        /* 사진 */
-        .portfolio_photo{width: 1040px;height: 650px;position: absolute;top: 15%;
-        border-radius: 10px 50px 10px 50px;overflow: hidden;cursor: pointer;box-shadow: ;}
-        .photo_rihgt{right: 110px;}
-        .photo_left{left: 110px;}
-            .portfolio_photo img{width: 100%;}
-        
-
-
-        /* 모바일 */
-        .mobile{position: absolute; z-index: 5;top: 300px;}
-            .mobile_left{left: 1020px;}
-            .mobile_rihgt{right: 1020px;}
-            .mobile img{width: 230px;}
-        .mobile_photo{position: relative;width: 230px;height: 457px;}
-            .mobile_photo a{position: absolute;top: 0;left: 0; z-index: 10;width: 100%;}
-            .mobile_photo .img2{position: absolute;top: 0;left: 0; margin: 58px 0 0 19px;width: 192px;
-            height: 80%;overflow: hidden;}
-                .mobile_photo .img2 img{width: 100%;}
-
-    </style>
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {padding-top: 100%;
+  margin: 0;
+  background: #ecf3f3;
+  position: relative;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* Particle container. */
+#particle-container {
+    top: 0;
+    left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+    </style>
     <script>
-
-        window.addEventListener("wheel", function (e) {
-            e.preventDefault();
-        }, { passive: false });
-
-
-        var mHtml = $("html");
-        var page = 1;
-
-
-        mHtml.animate({ scrollTop: 0 }, 10);
-
-
-        $(window).on("wheel", function (e) {
-            if (mHtml.is(":animated")) return;
-            if (e.originalEvent.deltaY > 0) {
-                if (page == 6) return;
-                page++;
-            } else if (e.originalEvent.deltaY < 0) {
-                if (page == 1) return;
-                page--;
-            }
-            var posTop = (page - 1) * $(window).height();
-            mHtml.animate({ scrollTop: posTop },500);
-        })
-
-
-
-
-
-        // 마우스오버 시 스크롤
-        $(function () {
-            // 포트폴리오 1 pc
-            $('.portfolio1 .portfolio_photo').mouseover(function () {
-                $('.portfolio1 .portfolio_photo img').stop().animate({ 'marginTop': '-2243.69px' }, 5000);
-            });
-            $('.portfolio1 .portfolio_photo').mouseout(function () {
-                $('.portfolio1 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
-            });
-
-            // 포트폴리오 2 pc
-            $('.portfolio2 .portfolio_photo').mouseover(function () {
-                $('.portfolio2 .portfolio_photo img').stop().animate({ 'marginTop': '-1827.83px' }, 5000);
-            });
-            $('.portfolio2 .portfolio_photo').mouseout(function () {
-                $('.portfolio2 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
-            });
-                    // 포트폴리오 2 모바일
-                    $('.portfolio2 .mobile').mouseover(function () {
-                        $('.portfolio2 .img2 img').stop().animate({ 'marginTop': '-1780px' }, 5000);
-                    });
-                    $('.portfolio2 .mobile').mouseout(function () {
-                        $('.portfolio2 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
-                    });
-
-            // 포트폴리오 3 pc
-            $('.portfolio3 .portfolio_photo').mouseover(function () {
-                $('.portfolio3 .portfolio_photo img').stop().animate({ 'marginTop': '-2087.84px' }, 5000);
-            });
-            $('.portfolio3 .portfolio_photo').mouseout(function () {
-                $('.portfolio3 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
-            });
-                    // 포트폴리오 3 모바일
-                    $('.portfolio3 .mobile').mouseover(function () {
-                        $('.portfolio3 .img2 img').stop().animate({ 'marginTop': '-2144px' }, 5000);
-                    });
-                    $('.portfolio3 .mobile').mouseout(function () {
-                        $('.portfolio3 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
-                    });
-
-            // 포트폴리오 4 pc
-            $('.portfolio4 .portfolio_photo').mouseover(function () {
-                $('.portfolio4 .portfolio_photo img').stop().animate({ 'marginTop': '-2157.64px' }, 5000);
-            });
-            $('.portfolio4 .portfolio_photo').mouseout(function () {
-                $('.portfolio4 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
-            });
-                    // 포트폴리오 4 모바일
-                    $('.portfolio4 .mobile').mouseover(function () {
-                        $('.portfolio4 .img2 img').stop().animate({ 'marginTop': '-2394px' }, 5000);
-                    });
-                    $('.portfolio4 .mobile').mouseout(function () {
-                        $('.portfolio4 .img2 img').stop().animate({ 'marginTop': '0px' }, 2000);
-                    });
-
-            // 포트폴리오 5 pc
-            $('.portfolio5 .portfolio_photo').mouseover(function () {
-                $('.portfolio5 .portfolio_photo img').stop().animate({ 'marginTop': '-2897.52px' }, 5000);
-            });
-            $('.portfolio5 .portfolio_photo').mouseout(function () {
-                $('.portfolio5 .portfolio_photo img').stop().animate({ 'marginTop': '0px' }, 2000);
-            });
-        });
+        
+particlesJS("particle-container", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "random"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
     </script>
 </head>
 <body>
-        <section class="main scroll">
+        <section class="main scroll" id="particle-container">
             <canvas></canvas>
         </section>
         <!-- 포트폴리오1 -->
