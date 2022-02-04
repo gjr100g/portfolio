@@ -8,106 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
-    <style>
-        ul,li{list-style: none;}
-        header{position: fixed;right: 30px;width: auto;height: 500px;z-index: 15;
-        top: 50%;transform: translateY(-50%);}
-        header li{width: 60px;height: 60px;border-radius: 60px;margin-bottom: 20px;
-        position: relative;border: 3px solid rgb(49, 49, 49); filter: grayscale(100%);
-        opacity: 0.7;transition: 0.4s;}
-        header li:hover{opacity: 1; filter: none;}
-        header a:nth-of-type(1) li{background-color:#62ab00;}
-        header a:nth-of-type(2) li{background-color:#c1d82e;}
-        header a:nth-of-type(3) li{background-color:rgb(172, 231, 255);}
-        header a:nth-of-type(4) li{background-color:rgb(216, 0, 0);}
-        header a:nth-of-type(5) li{background-color:#d6dfe4;}
 
-        header li img{position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);}
-        header img{width: 40px;}
-
-
-
-
-
-        .main {
-            color: white;
-            position: relative;
-        }
-        .main img[alt="astronaut"]{position: absolute; top: 350px;left: 50%;margin: -200px;
-        width: 300px;animation: bubu 5s ease infinite;}
-
-        @keyframes bubu{
-            0%{transform:translate(0px);}
-            50%{transform:translate(50px);}
-            100%{transform:translate(0px);}
-        }
-    
-        .main img[alt="arrow"]{position: absolute; top: 850px;left: 50%;margin-left: -15px;
-        width: 30px;height: 10px; animation: arrow 2s ease infinite;}
-        .main img[alt="arrow"]:nth-of-type(2){top: 870px;width: 25px;height: 8px;margin-left: -12.5px;}
-
-
-        @keyframes arrow{
-            0%{transform: translateY(0px);}
-            50%{transform: translateY(3px);}
-            100%{transform: translateY(0px);}
-        }
-
-
-
-        .main div{width: 30px;height: 50px; border: solid rgb(201, 201, 201) 2px;
-        position: absolute;bottom: 100px; border-radius: 10px; left: 50%;transform: translateX(-50%);}
-        .main div span{display: block; width:7px; height: 7px;background-color: rgb(201, 201, 201);
-        border-radius: 10px;margin: 0 auto;margin-top: 8px;animation: mouse 2s ease infinite;}
-
-
-        @keyframes mouse{
-            0%{transform: translateY(0px);}
-            50%{transform: translateY(7px);}
-            100%{transform: translateY(0px);}
-        }
-
-
-        
-
-
-        .main h1 {
-            font-size: 40px;
-            position: absolute;
-            top: 550px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    
-        .main p {
-            top: 630px;
-            font-size: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            position: absolute;
-        }
-    
-        .typing {
-            display: inline-block;
-            vertical-align: middle;
-            border-right: .05em solid black;
-            animation: cursor 0.2s ease infinite;
-        }
-    
-        @keyframes cursor {
-            0% {
-                border-right: 1px solid #fff
-            }
-    
-            50% {
-                border-right: 1px solid #000
-            }
-    
-            100% {
-                border-right: 1px solid #fff
-            }
-        }
-    </style>
 
 </head>
 <body>
@@ -115,11 +16,11 @@
     <header>
         <nav>
             <ul>
-                <a href="#portfolio1"><li><img src="img/책.png" alt=""></li></a>
-                <a href="#portfolio2"><li><img src="img/비행기.png" alt=""></li></a>
-                <a href="#portfolio3"><li><img src="img/놀이동산.png" alt=""></li></a>
-                <a href="#portfolio4"><li><img src="img/축구.png" alt=""></li></a>
-                <a href="#portfolio5"><li><img src="img/강아지.png" alt=""></li></a>
+                <li id="qq"><img src="img/책.png" alt=""></li>
+                <li><img src="img/비행기.png" alt=""></li>
+                <li><img src="img/놀이동산.png" alt=""></li>
+                <li><img src="img/축구.png" alt=""></li>
+                <li><img src="img/강아지.png" alt=""></li>
             </ul>
         </nav>
     </header>
@@ -209,7 +110,7 @@
             </div>
             <div class="mobile mobile_left">
                 <div class="mobile_photo">
-                    <a href="https://gjr100g.github.io/JINAIR/" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                    <a href="https://gjr100g.github.io/JINAIR/" onclick="window.open(this.href, '_blank', 'width=480, height=800'); return false;">
                         <img src="img/mobile/mobile.png" alt="">
                     </a>
                     <div class="img2">
@@ -256,7 +157,7 @@
             </div>
             <div class="mobile mobile_rihgt">
                 <div class="mobile_photo">
-                    <a href="https://gjr100g.github.io/disneyland/index.html" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                    <a href="https://gjr100g.github.io/disneyland/index.html" onclick="window.open(this.href, '_blank', 'width=480, height=800'); return false;">
                         <img src="img/mobile/mobile.png" alt="">
                     </a>
                     <div class="img2">
@@ -304,7 +205,7 @@
             </div>
             <div class="mobile mobile_left">
                 <div class="mobile_photo">
-                    <a href="https://gjr100g.github.io/manchester-united/" onclick="window.open(this.href, '_blank', 'width=640, height=960'); return false;">
+                    <a href="https://gjr100g.github.io/manchester-united/" onclick="window.open(this.href, '_blank', 'width=480, height=800'); return false;">
                         <img src="img/mobile/mobile.png" alt="">
                     </a>
                     <div class="img2">
@@ -351,38 +252,7 @@
             </div>
 
         </section>
-        <script>
-
-                var typingBool = false;
-                var typingIdx = 0;
-
-                // 타이핑될 텍스트를 가져온다 
-                var typingTxt = $(".typing-txt").text();
-
-                typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
-
-                if (typingBool == false) {
-                    // 타이핑이 진행되지 않았다면 
-                    typingBool = true;
-                    var tyInt = setInterval(typing, 200); // 반복동작 
-                }
-
-                function typing() {
-                    if (typingIdx < typingTxt.length) {
-                        // 타이핑될 텍스트 길이만큼 반복 
-                        $(".typing").append(typingTxt[typingIdx]);
-                        // 한글자씩 이어준다. 
-                        typingIdx++;
-                    } else {
-                        //끝나면 반복종료 
-                        $(".typing").text("");
-                        typingIdx = 0;
-
-                    }
-                }
-
-        </script>
-
+        <script src="js/typing.js"></script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
         <script>
