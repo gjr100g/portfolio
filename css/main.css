@@ -8,6 +8,7 @@ body {background-color: #17182f;}
 body::-webkit-scrollbar{display: none;}
 a{color: #222;}
 
+
 .scroll{width: 100%; height: 100%;}
 
 .typing-txt{display: none;}
@@ -191,3 +192,32 @@ box-shadow: 0 0 20px 4px grey;}
     .mobile_photo .img2{position: absolute;top: 0;left: 0; margin: 58px 0 0 19px;width: 192px;
     height: 80%;overflow: hidden;}
         .mobile_photo .img2 img{width: 100%;}
+
+
+
+
+
+/* 자기소계 */
+.About_Me{width: 100%;height: 100%;position: relative;background-color: rgb(226, 226, 226);}
+    .About_Me-box{width: 75%;height: 75%; position: absolute;top: 50%;left: 50%;
+    transform: translateX(-50%) translateY(-50%);background-color: white;box-shadow: 10px 10px 20px 5px gray;
+    padding: 2% 4%;border-radius: 40px 200px;}
+    .About_Me-box .title{height: 12%;}
+    .About_Me-box .title h2{font-size: 30px;}
+    .About_Me-box .sub_title{height: 8%;}
+    .About_Me-box .sub_title h3{font-weight: normal;}
+    .About_Me-box .main_box{width: 100%;height: 80%;}
+    .About_Me-box .photo{width: 30%;height: 100%;float: left;
+    position: relative;}
+    .About_Me-box .photo img{width: 80%;position: absolute;left: 50%;top: 15px;
+    transform: translateX(-50%) ;}
+    .About_Me-box .text{width: 70%;height: 100%;float: right;
+    padding-left: 30px;}
+    .About_Me-box .text h2{font-size: 30px;margin: 0;}
+    .About_Me-box .text h4{font-size: 20px; font-weight: normal;margin: 6px 0;}
+    .About_Me-box .text p{font-size: 16px;line-height: 25px;}
+    .About_Me-box .text table{width: 100%;height:auto;margin-top: 50px;
+    text-align: left;}
+    .About_Me-box .text table th{width: 100px;vertical-align: top}
+    .About_Me-box .text table td{vertical-align: top}
+    .About_Me-box .text table tr{height: 40px;}
