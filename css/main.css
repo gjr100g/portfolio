@@ -4,12 +4,10 @@ body {background-color: #17182f;}
 
 
 
-/* 사이드 스크롤 없에기 */
-body::-webkit-scrollbar{display: none;}
 a{color: #222;}
 
 
-.scroll{width: 100%; height: 100%;}
+.scroll{width: 100%; height: 100%;padding: 0 6%;}
 
 .typing-txt{display: none;}
 
@@ -47,9 +45,9 @@ width: 300px;animation: bubu 5s ease infinite;}
     100%{transform:translate(0px);}
 }
 
-.main img[alt="arrow"]{position: absolute; top: 850px;left: 50%;margin-left: -15px;
+.main img[alt="arrow"]{position: absolute; bottom: 70px;left: 50%;margin-left: -15px;
 width: 30px;height: 10px; animation: arrow 2s ease infinite;}
-.main img[alt="arrow"]:nth-of-type(2){top: 870px;width: 25px;height: 8px;margin-left: -12.5px;}
+.main img[alt="arrow"]:nth-of-type(2){bottom: 50px;width: 25px;height: 8px;margin-left: -12.5px;}
 
 
 @keyframes arrow{
@@ -116,10 +114,9 @@ border-radius: 10px;margin: 0 auto;margin-top: 8px;animation: mouse 2s ease infi
 
 
 /* 텍스트 */
-.portfolio_text{width: 450px;height: 100%;background-color: white;top: 0;padding-left: 20px;
-position: absolute;}
-.text_left{left: 110px;}
-.text_rihgt{right: 110px;}
+.portfolio_text{width: 27%;height: 100%;background-color: white;padding-left: 20px;}
+.text_left{float: left;}
+.text_rihgt{float: right;}
     .portfolio_text hr{width: 9px;height: 150px;border: none;margin-left: 30px;}
     .portfolio_text h1{font-size: 80px;}
     .portfolio_text h3{font-size: 23px;font-weight: normal;margin: 5px 0;}
@@ -173,19 +170,21 @@ position: absolute;}
 
 
 /* 사진 */
-.portfolio_photo{width: 1040px;height: 650px;position: absolute;top: 15%;
+.portfolio_photo{width: 84%;height: 70%;position:absolute;top: 50%;left: 50%;
 border-radius: 10px 50px 10px 50px;overflow: hidden;cursor: pointer;
 box-shadow: 0 0 20px 4px grey;}
-.photo_rihgt{right: 110px;}
-.photo_left{left: 110px;}
+.photo_rihgt{float: right;width: 73%;height: 100%;position: relative;padding-left: 100px;}
+    .photo_rihgt .portfolio_photo{transform: translateX(-41%) translateY(-50%);}
+.photo_left{float: left;width: 73%;height: 100%;position: relative;padding-right: 150px;}
+    .photo_left .portfolio_photo{transform: translateX(-59%) translateY(-50%);}
     .portfolio_photo img{width: 100%;}
 
 
 
 /* 모바일 */
-.mobile{position: absolute; z-index: 5;top: 300px;}
-    .mobile_left{left: 1020px;}
-    .mobile_rihgt{right: 1020px;}
+.mobile{position: absolute; z-index: 5;bottom: 17%;}
+    .mobile_left{right: 5%;}
+    .mobile_rihgt{left: 5%;}
     .mobile img{width: 230px;}
 .mobile_photo{position: relative;width: 230px;height: 457px;}
     .mobile_photo a{position: absolute;top: 0;left: 0; z-index: 10;width: 100%;}
