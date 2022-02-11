@@ -1,60 +1,79 @@
              // 네비게이션
              var popo = $(window).height();
              $(function(){
-                
-                 $('nav li:nth-of-type(1)').click(function(){
+                $('nav li:nth-of-type(1)').click(function(){
+                    $('html').animate({'scrollTop':0});
+                });
+                 $('nav li:nth-of-type(2)').click(function(){
                      $('html').animate({'scrollTop':popo});
                  });
-                 $('nav li:nth-of-type(2)').click(function(){
+                 $('nav li:nth-of-type(3)').click(function(){
                      $('html').animate({'scrollTop':popo*2});
                  });
-                 $('nav li:nth-of-type(3)').click(function(){
+                 $('nav li:nth-of-type(4)').click(function(){
                      $('html').animate({'scrollTop':popo*3});
                  });
-                 $('nav li:nth-of-type(4)').click(function(){
+                 $('nav li:nth-of-type(5)').click(function(){
                      $('html').animate({'scrollTop':popo*4});
                  });
-                 $('nav li:nth-of-type(5)').click(function(){
+                 $('nav li:nth-of-type(6)').click(function(){
                      $('html').animate({'scrollTop':popo*5});
                  });
+                 $('nav li:nth-of-type(7)').click(function(){
+                    $('html').animate({'scrollTop':popo*6});
+                });
              });
      
              $(window).scroll(function () {
+                if ($(window).scrollTop() == 0) {
+                    $('nav li:nth-of-type(1)').css({'filter':'none'});
+                    $('nav li:nth-of-type(1)').css({'opacity':'1'});
+                }else{
+                    $('nav li:nth-of-type(1)').css({'filter':'grayscale(100%)'});
+                    $('nav li:nth-of-type(1)').css({'opacity':'0.7'});
+                }
                  if ($(window).scrollTop() == popo) {
-                     $('nav li:nth-of-type(1)').css({'filter':'none'});
-                     $('nav li:nth-of-type(1)').css({'opacity':'1'});
-                 }else{
-                     $('nav li:nth-of-type(1)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(1)').css({'opacity':'0.7'});
-                 }
-                 if ($(window).scrollTop() == popo*2) {
                      $('nav li:nth-of-type(2)').css({'filter':'none'});
                      $('nav li:nth-of-type(2)').css({'opacity':'1'});
                  }else{
                      $('nav li:nth-of-type(2)').css({'filter':'grayscale(100%)'});
                      $('nav li:nth-of-type(2)').css({'opacity':'0.7'});
                  }
-                 if ($(window).scrollTop() == popo*3) {
+                 if ($(window).scrollTop() == popo*2) {
                      $('nav li:nth-of-type(3)').css({'filter':'none'});
                      $('nav li:nth-of-type(3)').css({'opacity':'1'});
                  }else{
                      $('nav li:nth-of-type(3)').css({'filter':'grayscale(100%)'});
                      $('nav li:nth-of-type(3)').css({'opacity':'0.7'});
                  }
-                 if ($(window).scrollTop() == popo*4) {
+                 if ($(window).scrollTop() == popo*3) {
                      $('nav li:nth-of-type(4)').css({'filter':'none'});
                      $('nav li:nth-of-type(4)').css({'opacity':'1'});
                  }else{
                      $('nav li:nth-of-type(4)').css({'filter':'grayscale(100%)'});
                      $('nav li:nth-of-type(4)').css({'opacity':'0.7'});
                  }
-                 if ($(window).scrollTop() == popo*5) {
+                 if ($(window).scrollTop() == popo*4) {
                      $('nav li:nth-of-type(5)').css({'filter':'none'});
                      $('nav li:nth-of-type(5)').css({'opacity':'1'});
                  }else{
                      $('nav li:nth-of-type(5)').css({'filter':'grayscale(100%)'});
                      $('nav li:nth-of-type(5)').css({'opacity':'0.7'});
                  }
+                 if ($(window).scrollTop() == popo*5) {
+                     $('nav li:nth-of-type(6)').css({'filter':'none'});
+                     $('nav li:nth-of-type(6)').css({'opacity':'1'});
+                 }else{
+                     $('nav li:nth-of-type(6)').css({'filter':'grayscale(100%)'});
+                     $('nav li:nth-of-type(6)').css({'opacity':'0.7'});
+                 }
+                 if ($(window).scrollTop() == popo*6) {
+                    $('nav li:nth-of-type(7)').css({'filter':'none'});
+                    $('nav li:nth-of-type(7)').css({'opacity':'1'});
+                }else{
+                    $('nav li:nth-of-type(7)').css({'filter':'grayscale(100%)'});
+                    $('nav li:nth-of-type(7)').css({'opacity':'0.7'});
+                }
              });
              
              $(function(){
