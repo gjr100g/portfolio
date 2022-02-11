@@ -34,6 +34,9 @@ header li img{position: absolute;top: 50%;left: 50%;transform: translateX(-50%) 
 header img{width: 40px;}
 
 
+nav .licolor{filter: none; opacity: 1;}
+nav .licolor2{filter: none; opacity: 1;}
+
 /* 메인창 */
 .main {
     color: white;

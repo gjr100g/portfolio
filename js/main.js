@@ -20,70 +20,55 @@
                      $('html').animate({'scrollTop':popo*5});
                  });
                  $('nav li:nth-of-type(7)').click(function(){
-                    $('html').animate({'scrollTop':popo*6});
+                     $('html').animate({'scrollTop':popo*6});
                 });
              });
-     
+             
+             
              $(window).scroll(function () {
                 if ($(window).scrollTop() == 0) {
-                    $('nav li:nth-of-type(1)').css({'filter':'none'});
-                    $('nav li:nth-of-type(1)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(1)').addClass("licolor");
                 }else{
-                    $('nav li:nth-of-type(1)').css({'filter':'grayscale(100%)'});
-                    $('nav li:nth-of-type(1)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(1)').removeClass("licolor");
                 }
                  if ($(window).scrollTop() == popo) {
-                     $('nav li:nth-of-type(2)').css({'filter':'none'});
-                     $('nav li:nth-of-type(2)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(2)').addClass("licolor");
                  }else{
-                     $('nav li:nth-of-type(2)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(2)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(2)').removeClass("licolor");
                  }
                  if ($(window).scrollTop() == popo*2) {
-                     $('nav li:nth-of-type(3)').css({'filter':'none'});
-                     $('nav li:nth-of-type(3)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(3)').addClass("licolor");
                  }else{
-                     $('nav li:nth-of-type(3)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(3)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(3)').removeClass("licolor");
                  }
                  if ($(window).scrollTop() == popo*3) {
-                     $('nav li:nth-of-type(4)').css({'filter':'none'});
-                     $('nav li:nth-of-type(4)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(4)').addClass("licolor");
                  }else{
-                     $('nav li:nth-of-type(4)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(4)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(4)').removeClass("licolor");
                  }
                  if ($(window).scrollTop() == popo*4) {
-                     $('nav li:nth-of-type(5)').css({'filter':'none'});
-                     $('nav li:nth-of-type(5)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(5)').addClass("licolor");
                  }else{
-                     $('nav li:nth-of-type(5)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(5)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(5)').removeClass("licolor");
                  }
                  if ($(window).scrollTop() == popo*5) {
-                     $('nav li:nth-of-type(6)').css({'filter':'none'});
-                     $('nav li:nth-of-type(6)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(6)').addClass("licolor");
                  }else{
-                     $('nav li:nth-of-type(6)').css({'filter':'grayscale(100%)'});
-                     $('nav li:nth-of-type(6)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(6)').removeClass("licolor");
                  }
                  if ($(window).scrollTop() == popo*6) {
-                    $('nav li:nth-of-type(7)').css({'filter':'none'});
-                    $('nav li:nth-of-type(7)').css({'opacity':'1'});
+                    $('nav li:nth-of-type(7)').addClass("licolor");
                 }else{
-                    $('nav li:nth-of-type(7)').css({'filter':'grayscale(100%)'});
-                    $('nav li:nth-of-type(7)').css({'opacity':'0.7'});
+                    $('nav li:nth-of-type(7)').removeClass("licolor");
                 }
              });
              
              $(function(){
                  $('nav li').mouseover(function(){
-                     $(this).css({'opacity':'1'});
-                     $(this).css({'filter':'none'});
+                     $(this).addClass("licolor2");
                  });
                  $('nav li').mouseout(function(){
-                     $(this).css({'opacity':'0.7'});
-                     $(this).css({'filter':'grayscale(100%)'});
+                     $(this).removeClass("licolor2");
                  });
              });
      
