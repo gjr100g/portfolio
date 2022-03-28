@@ -23,13 +23,12 @@ position: relative;border: 3px solid rgb(49, 49, 49); filter: grayscale(100%);
 opacity: 0.7;transition: 0.4s;cursor: pointer;}
     /* 네비게이션 색 */
 header li:nth-of-type(1){background-color:#17182f;}
-header li:nth-of-type(2){background-color:rgb(94, 196, 255);}
-header li:nth-of-type(3){background-color:#62ab00;}
-header li:nth-of-type(4){background-color:#c1d82e;}
-header li:nth-of-type(5){background-color:rgb(172, 231, 255);}
-header li:nth-of-type(6){background-color:rgb(216, 0, 0);}
-header li:nth-of-type(7){background-color:#d6dfe4;}
-header li:nth-of-type(8){background-color:#c1e9ff;}
+header li:nth-of-type(2){background-color:#62ab00;}
+header li:nth-of-type(3){background-color:#c1d82e;}
+header li:nth-of-type(4){background-color:rgb(172, 231, 255);}
+header li:nth-of-type(5){background-color:rgb(216, 0, 0);}
+header li:nth-of-type(6){background-color:#d6dfe4;}
+header li:nth-of-type(7){background-color:#c1e9ff;}
 
 header li img{position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);}
 header img{width: 40px;}
@@ -140,42 +139,36 @@ border-radius: 10px;margin: 0 auto;margin-top: 8px;animation: mouse 2s ease infi
 
 
 /* 포트폴리오 메인색 */
-#portfolio1 .color span:nth-of-type(1){background-color: rgb(94, 196, 255); }
-#portfolio1 .color span:nth-of-type(2){background-color: #62ab00; }
-#portfolio2 .color span:nth-of-type(1){background-color: #62ab00; }
-#portfolio2 .color span:nth-of-type(2){background-color: rgb(233, 233, 233); }
-#portfolio3 .color span:nth-of-type(1){background-color: #c1d82e; }
-#portfolio3 .color span:nth-of-type(2){background-color: #bf036b; }
-#portfolio4 .color span:nth-of-type(1){background-color: #429aff; }
-#portfolio4 .color span:nth-of-type(2){background-color: #f4feff; }
-#portfolio5 .color span:nth-of-type(1){background-color: #dc0000; }
-#portfolio5 .color span:nth-of-type(2){background-color: #222222; }
-#portfolio6 .color span:nth-of-type(1){background-color: #d6dfe4; }
-#portfolio6 .color span:nth-of-type(2){background-color: #4c619a; }
+#portfolio1 .color span:nth-of-type(1){background-color: #62ab00; }
+#portfolio1 .color span:nth-of-type(2){background-color: rgb(233, 233, 233); }
+#portfolio2 .color span:nth-of-type(1){background-color: #c1d82e; }
+#portfolio2 .color span:nth-of-type(2){background-color: #bf036b; }
+#portfolio3 .color span:nth-of-type(1){background-color: #429aff; }
+#portfolio3 .color span:nth-of-type(2){background-color: #f4feff; }
+#portfolio4 .color span:nth-of-type(1){background-color: #dc0000; }
+#portfolio4 .color span:nth-of-type(2){background-color: #222222; }
+#portfolio5 .color span:nth-of-type(1){background-color: #d6dfe4; }
+#portfolio5 .color span:nth-of-type(2){background-color: #4c619a; }
 
 /* hr 색 */
-#portfolio1 hr{background-color: rgb(94, 196, 255);}
-#portfolio2 hr{background-color: #62ab00;}
-#portfolio3 hr{background-color: #c1d82e;}
-#portfolio4 hr{background-color: #429aff;}
-#portfolio5 hr{background-color: #dc0000;}
-#portfolio6 hr{background-color: #d6dfe4;}
+#portfolio1 hr{background-color: #62ab00;}
+#portfolio2 hr{background-color: #c1d82e;}
+#portfolio3 hr{background-color: #429aff;}
+#portfolio4 hr{background-color: #dc0000;}
+#portfolio5 hr{background-color: #d6dfe4;}
 
 /* 버튼 색 */
 
-#portfolio1 .button span{border-color: rgb(94, 196, 255);}
-#portfolio1 .button a:nth-of-type(1) span{background-color:rgb(94, 196, 255);}
-#portfolio2 .button span{border-color: #62ab00;}
-#portfolio2 .button a:nth-of-type(1) span{background-color:#62ab00;}
-#portfolio3 .button span{border-color: #c1d82e;}
-#portfolio3 .button a:nth-of-type(1) span{background-color: #c1d82e;}
-#portfolio4 .button span{border-color: #429aff;}
-#portfolio4 .button a:nth-of-type(1) span{background-color: #429aff;}
-#portfolio5 .button span{border-color: #dc0000;}
-#portfolio5 .button a:nth-of-type(1) span{background-color: #dc0000;}
-#portfolio6 .button span{border-color: #d6dfe4;}
-#portfolio6 .button a:nth-of-type(1) span{background-color: #d6dfe4;}
-
+#portfolio1 .button span{border-color: #62ab00;}
+#portfolio1 .button a:nth-of-type(1) span{background-color:#62ab00;}
+#portfolio2 .button span{border-color: #c1d82e;}
+#portfolio2 .button a:nth-of-type(1) span{background-color: #c1d82e;}
+#portfolio3 .button span{border-color: #429aff;}
+#portfolio3 .button a:nth-of-type(1) span{background-color: #429aff;}
+#portfolio4 .button span{border-color: #dc0000;}
+#portfolio4 .button a:nth-of-type(1) span{background-color: #dc0000;}
+#portfolio5 .button span{border-color: #d6dfe4;}
+#portfolio5 .button a:nth-of-type(1) span{background-color: #d6dfe4;}
 
 
 
